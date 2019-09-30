@@ -1,7 +1,9 @@
 package com.didispace.web;
 
 import com.didispace.beans.User;
+import com.didispace.database.UserRepository;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -9,6 +11,9 @@ import java.util.*;
 @RestController
 @RequestMapping(value="/users")
 public class UserController {
+    @Autowired
+    private UserRepository userRepository;
+
     // 创建线程安全的Map
     static Map<Long, User> users = Collections.synchronizedMap(new HashMap<Long, User> ());
     static {
