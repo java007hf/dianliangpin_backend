@@ -30,8 +30,14 @@ public class UserController {
     public List<User> getUserList() {
         // 处理"/users/"的GET请求，用来获取用户列表
         // 还可以通过@RequestParam从页面中传递参数来进行查询条件或者翻页信息的传递
-        System.out.println ("===getUserList===");
+        System.out.println (Thread.currentThread ().getId () + "===getUserList===");
         List<User> r = new ArrayList<User> (users.values());
+        List<User> users = userRepository.findAll ();
+
+        for(User u : users) {
+            System.out.println ("===getUserList==u=" + u);
+        }
+
         return r;
     }
 
@@ -48,10 +54,11 @@ public class UserController {
     public Integer addUser(@RequestBody User user) {
         System.out.println ("===addUser===" + user);
         Long id =  user.getId ();
-        User u = users.get (id);
+        User u = users.get(id);
         if (u != null) {
             return -1;
         } else {
+            userRepository.save (user);
             users.put (id, user);
             return 0;
         }

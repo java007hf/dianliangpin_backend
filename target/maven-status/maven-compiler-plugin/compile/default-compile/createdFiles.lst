@@ -1,0 +1,15 @@
+com/didispace/applicationevent/ApplicationFailedEventListener.class
+com/didispace/Application.class
+com/didispace/Application$AsyncLoader.class
+com/didispace/applicationevent/ApplicationReadyEventListener.class
+com/didispace/beans/User.class
+com/didispace/applicationevent/ApplicationStartedEventListener.class
+com/didispace/applicationevent/ApplicationStartingEventListener.class
+com/didispace/web/HelloController.class
+com/didispace/web/UserController.class
+com/didispace/applicationevent/ApplicationEnvironmentPreparedEventListener.class
+com/didispace/applicationevent/ApplicationPreparedEventListener.class
+com/didispace/AsyncTask.class
+com/didispace/ScheduledTasks.class
+com/didispace/database/UserRepository.class
+com/didispace/Swagger2.class

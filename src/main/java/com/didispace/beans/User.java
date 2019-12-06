@@ -1,10 +1,8 @@
 package com.didispace.beans;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Table(name="user_info")
 @Entity
 public class User {
     @Id
@@ -44,5 +42,13 @@ public class User {
     public void update(User user) {
         this.name = user.name;
         this.age = user.age;
+    }
+
+    @Override
+    public String toString () {
+        String userInfo = "id = " + id
+                + " , name = " + name
+                + ", age = " + age;
+        return userInfo;
     }
 }
